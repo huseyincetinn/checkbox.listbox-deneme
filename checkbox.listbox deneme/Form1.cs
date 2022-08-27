@@ -10,12 +10,50 @@ namespace checkbox.listbox_deneme
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             string adsoyad = string.Empty, TCNO = string.Empty, cinsiyet = string.Empty, öðrenim = string.Empty, diller = string.Empty, uzmanlýk = string.Empty;
 
             TCNO = textBox2.Text;
             adsoyad = textBox1.Text;
 
-            if (radioButton1.Checked == true)
+            if (textBox1.Text == "")
+                MessageBox.Show(" Lütfen Adý-Soyadý alanýný doldurunuz.", "Hata",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            
+            
+            if (textBox2.Text == "")
+                MessageBox.Show("Lütfen TC NO alanýný doldurunuz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (radioButton1.Checked == false)
+                if (radioButton2.Checked == false)
+                    MessageBox.Show("Cinsiyet alanýnda herhangi bir seçim yapýlmadý.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (radioButton3.Checked == false)
+                if (radioButton4.Checked == false)
+                    if (radioButton5.Checked == false)
+                        if (radioButton6.Checked == false)
+                            if (radioButton7.Checked == false)
+                                if (radioButton8.Checked == false)
+                                    MessageBox.Show("Öðrenim durumu alanýnda herhangi bir seçim yapýlmadý.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (checkBox1.Checked == false)
+                if (checkBox2.Checked == false)
+                    if (checkBox3.Checked == false)
+                        if (checkBox4.Checked == false)
+                            if (checkBox5.Checked == false)
+                                if (checkBox6.Checked == false)
+                                    MessageBox.Show("Diller alanýnda herhangi bir seçim yapýlmadý.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            if (checkBox7.Checked == false)
+                if (checkBox8.Checked == false)
+                    if (checkBox9.Checked == false)
+                        if (checkBox10.Checked == false)
+                            if (checkBox11.Checked == false)
+                                if (checkBox12.Checked == false)
+                                    MessageBox.Show("Uzmanlýk alanýnda herhangi bir seçim yapýlmadý.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+
+
+
+
+                            if (radioButton1.Checked == true)
             {
                 cinsiyet = radioButton1.Text;
             }
@@ -64,6 +102,7 @@ namespace checkbox.listbox_deneme
                 uzmanlýk = uzmanlýk + "," + checkBox12.Text;
             uzmanlýk = uzmanlýk.Substring(1);
 
+                                       
             listBox1.Items.Add("TC NO:" + TCNO + "  /  " + "Adý-Soyadý:" + adsoyad + "  /  " + "cinsiyet:" + cinsiyet + "  /  " + "Öðrenim Durumu:" + öðrenim + "  /  " + "Hakim Olduðu Diller:" + diller + "  /  " + "Yazýlýmda Uzmanlýk Alanlarý:" + uzmanlýk);
 
 
@@ -148,6 +187,14 @@ namespace checkbox.listbox_deneme
         {
             if (radioButton11.Checked == true)
                 this.BackColor = Color.White;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form2 formdeneme = new();
+            formdeneme.txtAdiSoyadi.Text = textBox1.Text;
+            formdeneme.ShowDialog();
+
         }
     }
 }
